@@ -130,8 +130,13 @@ public class TriangleTest {
    /*
     * Test the constructor to show if it throws any errors
     */
-    @Test(expected = Exception.class)
+    @Test
     public void test15() {
-    Triangle t1 = new Triangle();
-  }
+        try {
+          Triangle t1 = new Triangle();
+        } catch (Exception e) {
+            assertEquals (null,e);
+        }
+    }
+
 }
