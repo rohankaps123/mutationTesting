@@ -15,41 +15,46 @@ public class TriangleTest {
      * Test the classification of an equilateral triangle.
      */
     @Test
-    public void test1() {
+    public void testEquilateralTriangle() {
         Type actual = Triangle.classify(1, 1, 1);
         Type expected = EQUILATERAL;
         assertEquals (expected, actual);
     }
 
     /*
-     * Test the classification of an ISOSCELES triangle.
+     * Test 1 of the classification of an ISOSCELES triangle.
      */
     @Test
-    public void test2() {
+    public void testIsocelesTriangle1() {
         Type actual = Triangle.classify(1, 2, 2);
         Type expected = ISOSCELES;
         assertEquals (expected, actual);
     }
 
+    /*
+     * Test 2 of the classification of an ISOSCELES triangle.
+     */
     @Test
-    public void test3() {
+    public void testIsocelesTriangle2() {
         Type actual = Triangle.classify(2, 3, 2);
         Type expected = ISOSCELES;
         assertEquals (expected, actual);
     }
-
+    /*
+     * Test 1 of the classification of an ISOSCELES triangle.
+     */
     @Test
-    public void test4() {
+    public void testIsocelesTriangle3() {
         Type actual = Triangle.classify(2, 2, 1);
         Type expected = ISOSCELES;
         assertEquals (expected, actual);
     }
+
     /*
      * Test the classification of an SCALENE triangle.
      */
-
      @Test
-     public void test5() {
+     public void testScaleneTriangle() {
          Type actual = Triangle.classify(5, 12, 13);
          Type expected = SCALENE;
          assertEquals (expected, actual);
@@ -59,42 +64,42 @@ public class TriangleTest {
      * Test Different Conditionals for INVALID triangle.
      */
     @Test
-    public void test6() {
+    public void testInvalidTriangle1() {
         Type actual = Triangle.classify(1, 2, 3);
         Type expected = INVALID;
         assertEquals (expected, actual);
     }
 
     @Test
-    public void test7() {
+    public void testInvalidTriangle2() {
         Type actual = Triangle.classify(0, 1, 2);
         Type expected = INVALID;
         assertEquals (expected, actual);
     }
 
     @Test
-    public void test8() {
+    public void testInvalidTriangle3() {
         Type actual = Triangle.classify(1, 0, 2);
         Type expected = INVALID;
         assertEquals (expected, actual);
     }
 
     @Test
-    public void test9() {
+    public void testInvalidTriangle4() {
         Type actual = Triangle.classify(1, 2, 0);
         Type expected = INVALID;
         assertEquals (expected, actual);
     }
 
     @Test
-    public void test10() {
+    public void testInvalidTriangle5() {
         Type actual = Triangle.classify(3, 2, 1);
         Type expected = INVALID;
         assertEquals (expected, actual);
     }
 
     @Test
-    public void test11() {
+    public void testInvalidTriangle6() {
         Type actual = Triangle.classify(2, 3, 1);
         Type expected = INVALID;
         assertEquals (expected, actual);
@@ -102,24 +107,36 @@ public class TriangleTest {
 
 
     @Test
-    public void test12() {
+    public void testInvalidTriangle7() {
         Type actual = Triangle.classify(2, 2, 5);
         Type expected = INVALID;
         assertEquals (expected, actual);
     }
 
     @Test
-    public void test13() {
+    public void testInvalidTriangle8() {
         Type actual = Triangle.classify(5, 2, 2);
         Type expected = INVALID;
         assertEquals (expected, actual);
     }
 
     @Test
-    public void test14() {
+    public void testInvalidTriangle9() {
         Type actual = Triangle.classify(2, 5, 2);
         Type expected = INVALID;
         assertEquals (expected, actual);
+    }
+
+    /*
+    * Test the constructor to show if it throws any errors
+    */
+    @Test
+    public void test15() {
+        try {
+          Triangle t1 = new Triangle();
+        } catch (Exception e) {
+            assertEquals (null,e);
+        }
     }
 
   // Mutation ??
